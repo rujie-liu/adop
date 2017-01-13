@@ -3,7 +3,7 @@
 elasticsearch:
   container_name: elasticsearch
   restart: always
-  image: elasticsearch:2.1.1
+  image: registry.cn-hangzhou.aliyuncs.com/bennyzmm/elasticsearch:2.1.1
   net: ${CUSTOM_NETWORK_NAME}
   command: elasticsearch -Des.network.host=0.0.0.0
   ports:
@@ -14,7 +14,7 @@ elasticsearch:
 logstash:
   container_name: logstash
   restart: always
-  image: accenture/adop-logstash:0.1.0
+  image: registry.cn-hangzhou.aliyuncs.com/bennyzmm/adop-logstash:0.1.0
   net: ${CUSTOM_NETWORK_NAME}
   environment:
     - "constraint:tier==public"
@@ -27,7 +27,7 @@ logstash:
 kibana:
   container_name: kibana
   restart: always
-  image: kibana:4.3.1
+  image: registry.cn-hangzhou.aliyuncs.com/bennyzmm/kibana:4.3.1
   net: ${CUSTOM_NETWORK_NAME}
   command: kibana
   environment:
